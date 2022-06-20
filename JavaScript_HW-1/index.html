@@ -46,24 +46,58 @@
         // 5. Запросіть у користувача відстань у кілометрах між двома
         // містами та за скільки годин він хоче дістатися. Порахуйте
         // швидкість, з якою потрібно рухатися, щоб встигнути вчасно.
+        const distance_between_cities = prompt("Enter the distance between cities in km.");
+        const hours_of_travel = prompt("How many hours do you want to get there?");
+        let speed_travel = distance_between_cities / hours_of_travel;
+        if (!isNaN(speed_travel)) alert(speed_travel + " km/h - you need to moove.");
+        else alert("ERROR \nNot correct data.");
 
         // 6. Реалізуйте конвертор валют. Користувач вводить долари,
         // програма конвертує у євро. Курс валюти зберігайте у константі.
+        const kurs_dolar_to_euro = 0.95;
+        let euro = prompt("Enter dollars.") * kurs_dolar_to_euro;
+        if (!isNaN(euro)) alert("Take your " + euro + " euro.");
+        else alert("ERROR \nNot correct data.");
 
-        // 7. Користувач вказує обсяг флешки у ГБ. Програма має підрахувати скільки файлів розміром 820 МБ вміститься на
-        // флешку.
+        // 7. Користувач вказує обсяг флешки у ГБ. Програма має підрахувати скільки
+        //  файлів розміром 820 МБ вміститься на флешку.
+        const memoryGB_flash = prompt("Enter how much GB memory in your flash.");
+        let cnt_files = Math.trunc((memoryGB_flash * 1024) / 820);
+        if (!isNaN(cnt_files)) alert(cnt_files + " files size 820MB you can write to your flash drive.");
+        else alert("ERROR \nNot correct data.");
 
         // 8. Користувач вводить суму грошей у гаманці та вартість
         // однієї шоколадки. Програма виводить скільки шоколадок
         // може купити користувач і скільки здачі в нього залишиться.
+        const money = prompt("Enter how much money in your case.");
+        const price_chocolate = prompt("Enter price of one chocolate.");
+        let cnt_chocolate, rest_money;
+        if (!isNaN(rest_money = money % price_chocolate) && !isNaN(cnt_chocolate = (money - rest_money) / price_chocolate))
+            alert("You can have:\n" +
+                cnt_chocolate + " -count chocolates\n" +
+                rest_money + " -rest money");
+        else alert("ERROR \nNot correct data.");
 
         // 9. Запросіть у користувача тризначне число і виведіть його
         // паліндром (число-перевертень). Для вирішення завдання
         // вам знадобиться оператор % (залишок від ділення).
+        let num = prompt("Enter a three-digit number");
+        if (num.length == 3 && Number.isInteger(+num)) {
+            let polindrom_num = "";
+            polindrom_num += num % 10;
+            num = (num - (num % 10)) / 10;
+            polindrom_num += num % 10;
+            num = (num - (num % 10)) / 10;
+            polindrom_num += num;
+            alert(polindrom_num);
+        }
+        else alert("ERROR \nNot correct data.");
 
         // 10. Запросіть у користувача ціле число і виведіть у відповідь
         // парне або непарне. В завданні використовуйте логічні
         // оператори і не використовуйте if та switch.
+        prompt("Enter number") % 2 == 0 ? alert("Parne") : alert("Ne parne");
+
 
     </script>
 </body>
