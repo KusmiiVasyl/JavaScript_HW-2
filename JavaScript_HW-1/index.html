@@ -15,10 +15,20 @@
         //-------------------------------------------------------------
         // 1. Запросіть у користувача його ім’я та виведіть у відповідь
         // «Привіт, (його ім’я)!».
+        let name_user = prompt("Enter your name!");
+        alert("Hello " + name_user + "!");
 
         // 2. Запросіть у користувача його рік народження, підрахуйте
         // скільки йому років і виведіть результат. Поточний рік
         // вкажіть у коді як константу.
+        const nowYear = new Date().getFullYear();
+        let birthYear_user = prompt("Enter the year of birth!");
+        let age_user = nowYear - birthYear_user;
+        //перевірка на коректність введеного року
+        if ((birthYear_user.length == 4) && (isNaN(age_user) === false) && (birthYear_user < nowYear)) {
+            alert("Your age: " + age_user + " years.");
+        }
+        else { alert("ERROR \nThe year is not entered correctly!"); }
 
         // 3. Запросіть у користувача довжину сторони квадрата та
         // виведіть його периметр.
