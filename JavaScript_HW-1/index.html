@@ -38,6 +38,10 @@
         else alert("ERROR \nThe length of sqaure is not entered correctly!");
 
         // 4. Запросіть у користувача радіус кола та виведіть його площу.
+        const radius_circle = prompt("Enter radius of the circle.");
+        let area_circle = 3.14 * (radius_circle ** 2);
+        if (!isNaN(area_circle)) alert("Area of circle: " + area_circle);
+        else alert("ERROR \nThe radius of the circle is not entered correctly!");
 
         // 5. Запросіть у користувача відстань у кілометрах між двома
         // містами та за скільки годин він хоче дістатися. Порахуйте
